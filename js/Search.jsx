@@ -16,7 +16,7 @@ class Search extends Component {
         return(
             <div className="search">
                 <header>
-                    <h1>Video</h1>
+                    <h1>TvHouse</h1>
                     <input onChange={this.handleInput} type="text" placeholder="Search" value={this.state.searchTerm}/>
                 </header>
                 <div>
