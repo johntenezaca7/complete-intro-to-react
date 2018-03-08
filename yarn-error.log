@@ -1,5 +1,5 @@
 Arguments: 
-  /usr/local/bin/node /usr/local/bin/yarn format
+  /usr/local/bin/node /usr/local/bin/yarn lint
 
 PATH: 
   /usr/bin:/bin:/usr/sbin:/sbin:/usr/local/bin
@@ -17,15 +17,16 @@ npm manifest:
   {
     "scripts": {
       "api": "node ratingsAPI.js",
-      "format": "prettier --list-different --single-quote --print-width=120 webpack.config.js \"js/**/*.{js,jsx}\"",
+      "format": "prettier --list-different --single-quote --print-width=120  \"js/**/*.{js,jsx}\"",
       "lint": "eslint **/*.{js,jsx} --quiet",
       "watch": "webpack --watch",
       "build": "webpack",
       "build:dev": "webpack -d",
-      "dev": "NODE_ENV=development nodemon server.js",
+      "dev": "webpack-dev-server",
       "start": "NODE_ENV=server node server.js",
+      "test:coverage":"jest --coverage",
       "test": "NODE_ENV=test jest",
-      "test:update": "NODE_ENV=test jest -u"
+      "test:update": "jest -u"
     },
     "jest": {
       "snapshotSerializers": [
@@ -40,6 +41,7 @@ npm manifest:
       "compression": "1.6.2",
       "cors": "2.8.3",
       "express": "4.15.3",
+      "json-loader": "^0.5.7",
       "lodash": "4.17.4",
       "preact": "8.1.0",
       "preact-compat": "3.16.0",
@@ -3332,6 +3334,10 @@ Lockfile:
     version "0.5.4"
     resolved "https://registry.yarnpkg.com/json-loader/-/json-loader-0.5.4.tgz#8baa1365a632f58a3c46d20175fc6002c96e37de"
   
+  json-loader@^0.5.7:
+    version "0.5.7"
+    resolved "https://registry.yarnpkg.com/json-loader/-/json-loader-0.5.7.tgz#dca14a70235ff82f0ac9a3abeb60d337a365185d"
+  
   json-schema@0.2.3:
     version "0.2.3"
     resolved "https://registry.yarnpkg.com/json-schema/-/json-schema-0.2.3.tgz#b480c892e59a2f05954ce727bd3f2a4e882f9e13"
@@ -5614,7 +5620,7 @@ Trace:
   Error: Command failed.
   Exit code: 1
   Command: sh
-  Arguments: -c prettier --list-different --single-quote --print-width=120 webpack.config.js "js/**/*.{js,jsx}"
+  Arguments: -c eslint **/*.{js,jsx} --quiet
   Directory: /Users/owner/Documents/FrontEndM/React/complete-intro-to-react
   Output:
   
