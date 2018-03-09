@@ -1,5 +1,5 @@
 Arguments: 
-  /usr/local/bin/node /usr/local/bin/yarn lint
+  /usr/local/bin/node /usr/local/bin/yarn api
 
 PATH: 
   /usr/bin:/bin:/usr/sbin:/sbin:/usr/local/bin
@@ -5620,7 +5620,7 @@ Trace:
   Error: Command failed.
   Exit code: 1
   Command: sh
-  Arguments: -c eslint **/*.{js,jsx} --quiet
+  Arguments: -c node ratingsAPI.js
   Directory: /Users/owner/Documents/FrontEndM/React/complete-intro-to-react
   Output:
   
